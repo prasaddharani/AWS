@@ -114,7 +114,8 @@ Enable **Auto-assign Public IP** = **ON** for Public Subnets.
 ```bash
 #!/bin/bash
 sudo yum update -y
-sudo amazon-linux-extras install nginx1 -y
+sudo amazon-linux-extras enable nginx1
+sudo yum install -y nginx
 echo "<h1>Hello from Private EC2 in $(hostname) </h1>" | sudo tee /usr/share/nginx/html/index.html
 sudo systemctl enable nginx
 sudo systemctl start nginx
